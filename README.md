@@ -1,50 +1,52 @@
-# Welcome to your Expo app 👋
+# InfernoKu
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Identitas Proyek**
 
-## Get started
+* **Nama:** InfernoKu
+* **Deskripsi singkat:** Aplikasi manajemen pekerjaan (Job Management) sederhana untuk membantu tim atau pemilik usaha mengelola daftar pekerjaan: menambah, melihat detail, mengedit, menghapus, menandai selesai, dan menghitung total fee dari pekerjaan yang sudah ditambahkan.
+* **Penulis:** I Made Wisnu Pradnya Yoga (2301020010)
+* **Tanggal:** 2025-10-26
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## Ringkasan Fitur
 
-2. Start the app
+InfernoKu menyediakan fitur-fitur inti berikut:
 
-   ```bash
-   npx expo start
-   ```
+1. **CRUD Job**
 
-In the output, you'll find options to open the app in a
+   * **Create:** Menambahkan job baru dengan informasi seperti judul, klien, deskripsi, location, dan fee/payment.
+   * **Read:** Melihat daftar job beserta ringkasan informasinya.
+   * **Update:** Mengubah informasi job yang sudah ada.
+   * **Delete:** Menghapus job jika tidak diperlukan.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+2. **Menjumlahkan Fee (Total Finance)**
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+   * Aplikasi otomatis menghitung total fee dari seluruh job yang tersimpan.
 
-## Get a fresh project
+3. **Detail Job**
 
-When you're ready, run:
+   * Melihat halaman detail untuk setiap job yang menampilkan informasi lengkap (judul, klien, deskripsi, location, dan fee/payment).
 
-```bash
-npm run reset-project
-```
+4. **Menandai Job Selesai**
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+   * Mengubah status job menjadi "Selesai" ketika pekerjaan sudah dilaksanakan.
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
+## Struktur Data (Model Job)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Contoh struktur `Job` yang disarankan (TypeScript / JSON):
 
-## Join the community
+```ts
+interface Job {
+  id: number;
+  title: string;
+  client: string;
+  payment: number;
+  description?: string;
+  date?: string;
+  completed?: boolean; 
+  Location?: string;
+}
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
