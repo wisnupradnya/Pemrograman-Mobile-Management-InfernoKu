@@ -1,13 +1,20 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Tabs } from "expo-router";
+import { useAppTheme } from "../../context/ThemeContext";
 
 export default function TabsLayout() {
+  const { colors } = useAppTheme();
+
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "#149cac",
-        tabBarInactiveTintColor: "#999",
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.text,
         headerShown: false,
+        tabBarStyle: {
+          backgroundColor: colors.background,
+          borderTopColor: colors.border,
+        },
       }}
     >
       <Tabs.Screen
@@ -20,29 +27,20 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="crud"
+        name="Serch"
         options={{
-          title: "CRUD",
+          title: "Search",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="create-outline" color={color} size={size} />
+            <Ionicons name="search" color={color} size={size} />
           ),
         }}
       />
       <Tabs.Screen
-        name="detail"
-        options={{
-          title: "Detail",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="book-outline" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="finance"
+        name="Finance"
         options={{
           title: "Finance",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="cash-outline" color={color} size={size} />
+            <Ionicons name="cash" color={color} size={size} />
           ),
         }}
       />

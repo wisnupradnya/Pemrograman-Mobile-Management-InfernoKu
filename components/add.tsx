@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { useAppTheme } from "../context/ThemeContext";
 import { Job, useJobStore } from "../store/UseJobStore";
 
 interface AddJobFormProps {
@@ -15,6 +16,7 @@ interface AddJobFormProps {
 
 export default function AddJobForm({ onClose, job }: AddJobFormProps) {
   const { addJob, updateJob } = useJobStore();
+  const { colors } = useAppTheme();
 
   const [title, setTitle] = useState("");
   const [client, setClient] = useState("");
@@ -71,61 +73,116 @@ export default function AddJobForm({ onClose, job }: AddJobFormProps) {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
       <TextInput
-        style={styles.input}
+        style={[
+          styles.input,
+          {
+            borderColor: colors.border,
+            backgroundColor: colors.card,
+            color: colors.text,
+          },
+        ]}
         placeholder="Title"
+        placeholderTextColor={colors.text}
         value={title}
         onChangeText={setTitle}
       />
       <TextInput
-        style={styles.input}
+        style={[
+          styles.input,
+          {
+            borderColor: colors.border,
+            backgroundColor: colors.card,
+            color: colors.text,
+          },
+        ]}
         placeholder="Client"
+        placeholderTextColor={colors.text}
         value={client}
         onChangeText={setClient}
       />
       <TextInput
-        style={styles.input}
+        style={[
+          styles.input,
+          {
+            borderColor: colors.border,
+            backgroundColor: colors.card,
+            color: colors.text,
+          },
+        ]}
         placeholder="Payment"
+        placeholderTextColor={colors.text}
         value={payment}
         keyboardType="numeric"
         onChangeText={setPayment}
       />
       <TextInput
-        style={styles.input}
+        style={[
+          styles.input,
+          {
+            borderColor: colors.border,
+            backgroundColor: colors.card,
+            color: colors.text,
+          },
+        ]}
         placeholder="Description"
+        placeholderTextColor={colors.text}
         value={description}
         onChangeText={setDescription}
       />
       <TextInput
-        style={styles.input}
+        style={[
+          styles.input,
+          {
+            borderColor: colors.border,
+            backgroundColor: colors.card,
+            color: colors.text,
+          },
+        ]}
         placeholder="Location"
+        placeholderTextColor={colors.text}
         value={Location}
         onChangeText={setLocation}
       />
-      <TouchableOpacity style={styles.button} onPress={onSubmit}>
-        <Text style={styles.buttonText}>
+      <TouchableOpacity
+        style={[styles.button, { backgroundColor: colors.primary }]}
+        onPress={onSubmit}
+      >
+        <Text style={[styles.buttonText, { color: colors.background }]}>
           {job ? "Update Job" : "Tambah Job"}
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={[styles.button, { backgroundColor: "#888" }]}
+        style={[styles.button, { backgroundColor: colors.secondary }]}
         onPress={onClose}
       >
-        <Text style={styles.buttonText}>Batal</Text>
+        <Text style={[styles.buttonText, { color: colors.background }]}>
+          Batal
+        </Text>
       </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { padding: 16, backgroundColor: "#fff", borderRadius: 12 },
-  input: { borderWidth: 1, borderRadius: 8, padding: 12, marginBottom: 12 },
+  container: {
+    padding: 16,
+    borderRadius: 12,
+  },
+  input: {
+    borderWidth: 1,
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 12,
+  },
   button: {
-    backgroundColor: "#228B22",
     padding: 12,
     borderRadius: 8,
     marginBottom: 8,
   },
-  buttonText: { color: "#fff", textAlign: "center", fontWeight: "bold" },
+  buttonText: {
+    textAlign: "center",
+    fontWeight: "bold",
+  },
 });
