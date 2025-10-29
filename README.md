@@ -31,6 +31,15 @@ InfernoKu menyediakan fitur-fitur inti berikut:
 4. **Menandai Job Selesai**
 
    * Mengubah status job menjadi "Selesai" ketika pekerjaan sudah dilaksanakan.
+     
+5. **Search Job**
+
+   * Mencari atau memfilter job berdasarkan judul (title) agar pengguna lebih mudah menemukan pekerjaan tertentu.
+     
+5. **Dark Mode**
+
+   * Aplikasi dilengkapi fitur Dark Mode yang dapat diubah dengan tombol toggle (switch).
+
 
 ---
 
