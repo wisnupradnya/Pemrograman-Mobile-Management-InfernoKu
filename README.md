@@ -1,5 +1,7 @@
 # InfernoKu
 
+**Link Loom :** https://www.loom.com/share/05f647187f3245b5801b4a09c2b504f1
+
 **Identitas Proyek**
 
 * **Nama:** InfernoKu
@@ -58,4 +60,5 @@ interface Job {
   completed?: boolean; 
   Location?: string;
 }
+
 
